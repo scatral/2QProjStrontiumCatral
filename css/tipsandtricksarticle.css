@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@200;300;400;600&family=Yeseva+One&display=swap');
+
+/* GENERAL STYLING */
+
+body {
+	background-color: rgb(250,249,241);
+}
+*{
+	font-family:"Source Sans Pro", sans-serif; 
+    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: black;
+}
+p {
+	font-family: "Cantarell", sans-serif;
+}
+.color-overlay {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+
+/* NAVIGATION BAR */
+
+
+/* NAVIGATION BAR */
+
+
+.sidenav-wrapper .navbar{
+    z-index: 10;
+    position: fixed;
+    height: 100vh;
+    width: 22vw;
+    left: -22vw;
+    background-color: rgba(0,0,0,0.9);
+    box-shadow: 0 0 1vw rgba(0,0,0,0.5);
+    overflow: hidden;
+    transition: all 0.3s linear;
+    overflow: scroll;
+}
+
+.navbar .logo{
+	position: relative;
+    padding: 1.15vw;
+    font-family: 'Yeseva One', cursive;
+    color: rgb(250,249,241);
+    font-size: 225%;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 3px solid rgba(255,255,255,0.5);
+}
+
+.navbar .menu{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+.navbar .menu li{
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    position: relative;
+}
+
+.navbar .subcategory {
+    text-indent: 25px;
+}
+
+
+.navbar .menu a {
+    padding: 7% 10%;
+    font-size: 120%;
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: rgb(250,249,241);
+    width: 100%;
+    height: 100%;
+}
+
+.navbar .menu li:hover {
+    background-color: white;
+}
+
+.navbar .menu a:hover {
+    color: black;
+}
+
+
+#check {
+    display: none;
+}
+
+.sidenav-wrapper .btn-one i {
+    font-size: 210%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 1.5%;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.2s linear;
+}
+.navbar .btn-two i {
+    font-size: 150%;
+    position: absolute;
+    margin: 10%;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s linear;
+    color: white;
+}
+
+.btn-one i:hover{
+    font-size: 205%;
+}
+.btn-two i:hover {
+    font-size: 145%;
+}
+
+#check:checked ~.navbar {
+    left: 0;  
+}
+#check:checked ~.btn-one i {
+    opacity: 0;
+}
+#check:checked ~ .navbar .btn-two i {
+    opacity: 1;
+}
+
+.sidenav-wrapper {
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+
+@media (max-width: 600px) {
+    
+    .sidenav-wrapper .navbar {
+        width: 100%;
+        left: -100%;
+    }
+
+    .sidenav-wrapper .navbar .menu li {
+        
+        font-size: 75% !important;
+    }
+
+    .navbar .logo {
+        padding: 4vw;
+        font-size: 150% !important;
+    }
+
+    .navbar .btn-two i {
+        margin: 5%;
+    }
+
+    .sidenav-wrapper .btn-one i {
+        margin: 2% 3%;
+    }
+
+}
+
+
+/*HEADER: Main Logo*/
+
+.sidenav-wrapper .main-logo {
+    width: 100%;
+    text-align: center;
+    padding: 1%;
+}
+
+.sidenav-wrapper .main-logo a{
+    text-decoration: none;
+    font-family: 'Yeseva One', cursive;
+    font-size: 250%;
+}
+
+
+
+/*RECIPE ARTICLE AND ASIDE*/
+
+.recipe-article {
+    padding: 0 10vw 5vh;
+    width: 100%;
+    float: left;
+}
+
+
+/*HEADER */
+
+/*Recipe page path*/
+
+.recipe-path {
+    padding: 3vh 1vw;
+    position: absolute;
+}
+
+.recipe-path li {
+    list-style: none;
+    float: left;
+    margin: 0 0.5vw;
+    color: #f19941;
+    text-align: center;
+    font-weight: 600;
+}
+
+.recipe-path a{
+    text-decoration: none;
+    color: rgb(92, 137, 153);
+}
+
+.recipe-path a:hover {
+    text-decoration: underline;
+}
+
+.recipe-path li::before {
+    content: ">";
+    margin-right: 1vw;
+    color: black;
+}
+
+.recipe-path ul li:nth-of-type(1)::before{
+    content: " ";
+}
+
+
+
+/*Recipe category*/
+
+.recipe-category {
+    text-align: center;
+    width: 100%;
+    padding: 0.5vw;
+    margin-top: 7vh;
+    font-size: 125%;
+    font-weight: 400;
+    font-family: 'Outfit', sans-serif;
+    
+}
+
+/*Recipe title*/
+
+.recipe-title {
+    font-family: 'Yeseva One', cursive;
+    font-size: 400%;
+    width: 100%;
+    padding: 0 15vw;
+    text-align: center;
+}
+
+
+/*Recipe pictures*/
+
+.recipe-pictures {
+    text-align: center;
+}
+
+.recipe-pictures img{
+    margin: 2vw 0;
+    width: 90%;
+    height: auto;
+}
+
+@media (max-width: 1200px) {
+    .recipe-pictures img {
+        margin: 10px !important;
+    }
+}
+
+
+
+/*RECIPE INFORMATION*/
+
+.recipe-bio {
+    text-align: center;
+    font-size: 17px;
+    margin-top: 1vw;
+}
+
+.recipe-description hr {
+    margin: 3vw 52vw 1vw 0;
+    border: 1.5px solid #f19941;
+}
+
+.recipe-information header {
+    font-family: 'Outfit', sans-serif;
+    font-size: 250%;
+    font-weight: 700;
+    margin: 3vh 0 2vh;
+}
+
+.recipe-information {
+    margin-top: 1vw;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.recipe-information ul > li { 
+    margin: 0 0 15px 0;
+ }
+
+ .recipe-information .recipe-pictures1 {
+     width: 100%;
+     text-align: center;
+ }
+
+ .recipe-information .recipe-pictures1 > img{
+    width: 50%;
+    margin: 2vw 0;
+}
+
+
+
+
+.recipe-reference-image {
+    width: 100%;
+    text-align: center;
+}
+
+.recipe-reference-image > img {
+    margin: 2vw 0;
+    height: 50%;
+    object-fit: contain;
+}
+
+.recipe-reference-video {
+    margin: 2vw 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.morerecipes-link {
+    padding: 3vw 3vw 1vw;
+    width: 100%;
+    text-align: center;
+}
+
+.morerecipes-link a {
+    text-decoration: none;
+    font-size: 125%;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+
+.morerecipes-link a:hover {
+    text-decoration: underline;
+    text-decoration-color: #f19941;
+    text-decoration-thickness: 2px;
+}
+
+
+
+.recipe-references {
+    padding: 1vw;
+    margin-top: 2vw;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.recipe-references h1 {
+    font-size: 100%;
+}
+
+.recipe-references span {
+    word-wrap: break-word;
+    font-size: 75%;
+    width: 100%;
+}
+
+
+
+/* RECIPE ASIDE */
+
+
+.recipe-aside > div {
+    padding: 1.5vw 2vw 2vw 2vw;
+    margin: 0.5vw 1vw 0.5vw 0;
+    position: sticky;
+
+}
+
+.recipe-aside > div > header {
+    font-family: 'Outfit', sans-serif; 
+    font-size: 170%;
+    text-decoration: underline;
+    text-decoration-color: rgb(92, 137, 153);
+    text-decoration-thickness: 2px;
+    margin-bottom: 1vw;
+}
+
+.similar-recipes img  {
+    display: table-cell;
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+}
+
+.similar-recipes {
+    width: 100%;
+    position: relative;
+    display: table;
+    vertical-align: middle;
+}
+
+.recipe-aside a {
+    text-decoration: none;
+}
+
+.similar-recipes > div {
+    padding: 0.5vw 0.5vw 0.5vw 0.75vw;
+    width: 60%;
+    font-size: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.similar-recipes > div div:nth-of-type(odd) {
+    display: inline;
+    padding: 0.15vw;
+    font-size: 1vw;
+    color:  rgb(250,249,241);
+    background-color: rgba(0,0,0,0.5);
+}
+
+.similar-recipes > div div:nth-of-type(even) {  
+    font-size: 2vw;
+    font-weight: 400;
+}
+
+.recipe-aside hr {
+    border: 0.5px solid rgba(0,0,0,0.5);
+    margin: 0.75vw 0 1vw;
+}
+
+
+
+
+/* RECIPE FOOTER */
+
+
+.footer {
+    width: 100%;
+    height: 4.35vw;
+    background-color: rgb(92, 137, 153);
+    clear: both;
+}
+
+.footer > img {
+    height: 3vw;
+	position: relative;
+	left: 0.5vw;
+	top: 0.75vw;
+}
+
+.footer span {
+    font-family: 'Yeseva One', cursive;
+    font-size:  2vw;
+    font-weight: 400;
+}
+
+.footer > div {
+    margin: 0.6vw 1vw 0 0;
+    float: right;
+}
+
+.footer > p {
+    float: right;
+    margin-right: 2vw;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.25vw;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.footer-sprite-email {
+    background: url('../images/Social\ media\ icons.png') 60.7% 9.75%;
+    background-size: 15vw;
+    width: 3vw; 
+    height: 3vw;
+}
+
+.footer-sprite-email:hover {
+    background: url('../images/Social\ media\ icons.png') 60.7% 33%;
+    background-size: 15vw;
+}
+
+.footer-sprite-fb {
+    background: url('../images/Social\ media\ icons.png') 9.9% 9.9%;
+    background-size: 15vw;
+    width: 3vw; 
+    height: 3vw;
+}
+
+.footer-sprite-fb:hover {
+    background: url('../images/Social\ media\ icons.png') 9.9% 33%;
+    background-size: 15vw;
+}
+
+.footer-sprite-twt {
+    background: url('../images/Social\ media\ icons.png') 35% 9.9%;
+    background-size: 15vw;
+    width: 3vw; 
+    height: 3vw;
+}
+
+.footer-sprite-twt:hover {
+    background: url('../images/Social\ media\ icons.png') 35% 33.15%;
+    background-size: 15vw;
+}
+
+.footer a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}

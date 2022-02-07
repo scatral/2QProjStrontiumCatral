@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@200;300;400;600&family=Yeseva+One&display=swap');
+
+/* GENERAL STYLING */
+
+body {
+	background-color: rgb(250,249,241);
+}
+*{
+	font-family:"Source Sans Pro", sans-serif; 
+    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: black;
+}
+p {
+	font-family: "Cantarell", sans-serif;
+}
+.color-overlay {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+/* NAVIGATION BAR HEADER */
+
+.navbar-header{
+    width: 100%;
+    text-align: center;
+    padding: 0.75vw;
+    font-family: 'Yeseva One', cursive;
+    font-size: 300%;
+}
+
+
+/* NAVIGATION BAR */
+
+.navbar {
+    padding: 0 10vw;
+    border: 1px solid black; 
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    overflow: auto;
+}
+
+.navbar ul {
+    text-align: center;
+    float: left;
+    width: 20%;
+    padding: 2px;
+    font-size: 110%;
+    padding: 0.5vw 0 0.4vw 0;
+    height: 100%;
+}
+
+.navbar li {
+    height: 100%;
+    list-style-type: none;
+}
+
+.navbar a {
+    height: 100%;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+}
+
+.navbar a:hover {
+    font-weight: 500;
+	color: rgb(241, 153, 65);
+}
+
+
+/* HOMPAGE: MAIN BANNER */
+
+
+.homebanner {
+	margin: 2.5vw;
+	text-align: center;
+}
+
+.homebanner > header {
+	font-family: 'Yeseva One', sans-serif;
+	font-size: 200%;
+}
+
+.homebanner > p {
+	margin-top: 0.5vw;
+	font-family: 'Outfit', sans-serif;
+	font-size: 120%;
+	font-weight: 300;
+}
+
+.homebanner a {
+	text-decoration: none;
+}
+
+.homebanner a:hover {
+	font-weight: bolder;
+}
+
+
+
+
+
+
+/* HOMEPAGE: FEATURED ARTICLES */
+
+.featured-recipes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1vw 3vw 0;
+}
+
+.featured-recipe {
+	display: flex;
+	align-items: center;
+	width: 60%;
+	height: 40vw;
+	overflow:hidden;
+	position: relative;
+	margin: 1vw 0;
+}
+
+.featured-recipe:hover {
+	transform: scale(1.01,1.01);
+}
+
+.featured-recipe-small{
+	width: 38%;
+}
+
+.featured-recipe a {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+
+/* FEATURED RECIPES: IMAGE BACKGROUND */
+
+.featured-recipe img {
+	display: block;
+	width: 100%;
+	object-fit: contain;
+	z-index: 0;
+}
+
+.featured-recipe-small img{
+	height: 100%;
+	width: auto;
+	object-fit: contain;
+	z-index: 0;
+
+	top: 0;
+}
+
+/* FEATURED RECIPES: CATEGORY AND TITLE */
+
+.featured-recipe div:nth-of-type(1) {
+	margin: 2vw;
+	padding: 5px;
+	z-index:100;
+	font-family: 'Outfit', sans-serif;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background-color: black;
+	color: white;
+	font-size:1.5vw;
+}
+
+.featured-recipe div:nth-of-type(2) {
+	margin: 5.5vw 2vw;
+	padding: 5px;
+	z-index: 100;
+	font-family: 'Outfit', sans-serif;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background-color:white;
+	color: black;
+	font-size: 3vw;
+}
+
+.featured-recipe-small > div:nth-of-type(2) {
+	position: absolute;
+	bottom: 0;
+}
+
+
+
+@media (max-width: 600px) {
+	.featured-recipe {
+		width: 100%;
+		border: 1px solid black;
+	}
+
+	.featured-recipe img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	.featured-recipe div {
+		font-size: 80% !important;
+	}
+
+	.featured-recipe div:nth-of-type(2) {
+		font-size: 125% !important;
+		margin-top: 10vw;
+	}
+}
+
+
+
+
+/* HOMEPAGE: CATEGORIES */
+
+
+.home-categories {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0,1fr));
+	justify-content: space-around;
+	padding: 1vw;
+}
+
+.header {
+	margin: 2vw 0 1vw;
+	width: 100%;
+	font-family: 'Outfit', sans-serif;
+	text-align: center;
+	font-weight: 700;
+	font-size: 300%;
+}
+
+.home-categories > a > div {
+	position: relative;
+}
+
+.home-category {
+	padding: 1vw;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	height: 100%;
+}
+
+.home-categories img {
+	border-radius: 40%;
+	width: 100%;
+	z-index: 5;
+}
+
+.home-category .color-overlay {
+	background-color: rgba(250,249,241,0.45);
+	z-index: 10;
+	position: absolute;
+	border-radius: 40%;
+
+	display: flex;
+	text-align: center;
+	justify-content: center; 
+	align-items: center;
+
+	font-family: 'Outfit', sans-serif;
+	font-weight: 500;
+	font-size: 2.5vw;
+}
+
+.home-category .color-overlay:hover {
+	background-color: rgba(250,249,241,0.5);
+	font-weight: 600;
+}
+
+.home-category:hover {
+	transform: scale(1.05,1.05);
+}
+
+@media (max-width: 650px) {
+	.home-categories {
+		padding: 5vw;
+		grid-template-columns: auto auto auto;
+		flex-wrap: wrap;
+	}
+	.home-category .color-overlay{
+		font-size: 5vw;
+	}
+}
+
+
+
+
+/* HOMEPAGE: FEATURED ARTICLE */
+
+.featured-article-link {
+	display: inline-block;
+}
+
+.featured-article {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 2vw;
+}
+
+
+.featured-article > div {
+	width: 50%;
+	padding: 1vw;
+}
+
+.featured-article-image {
+	display: inline-block;
+	overflow: hidden;
+}
+
+.featured-article-image img {
+	object-fit: cover;
+	width: 100%;
+}
+
+.featured-article-image img:hover {
+	transform: scale(1.01,1.01);
+}
+
+.featured-article-description > p {
+	font-family: 'Outfit', sans-serif;
+	padding: 1vw 2vw 0;
+}
+
+.featured-article header {
+	margin: 1vw 2vw 2vw;
+	font-family: 'Outfit', sans-serif;
+	font-size: 4.5vw;
+	font-weight: 500;
+}
+
+.featured-article-description div{
+	font-family: 'Outfit', sans-serif;
+	margin: 2vw 2vw 0 2vw;
+	font-size: 1.5vw;
+}
+
+.featured-article-link {
+	border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 5px;
+    padding: 0.65vw;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.featured-article-link a {
+	font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 110%;
+}
+
+.featured-article-link a:hover {
+	font-weight: 600;
+}
+
+
+@media (max-width: 850px) {
+	.featured-article-description header {
+		margin: 0 2vw;
+	}
+	.featured-article-description div:nth-of-type(1){
+		font-size: 80%;
+		margin: 1vw 2vw 0 2vw;
+	}
+}
+
+@media (max-width: 650px) {
+	.featured-article > div {
+		width: 100%;
+	}
+	.featured-article-link {
+		font-size: 65% !important;
+	}
+}
+
+
+
+
+
+/* HOMEPAGE: FOOTER */
+
+.footer {
+    width: 100%;
+    height: 4.35vw;
+    background-color: rgb(92, 137, 153);
+    clear: both;
+}
+
+.footer > img {
+    height: 3vw;
+	position: relative;
+	left: 0.5vw;
+	top: 0.75vw;
+}
+
+.footer span {
+    font-family: 'Yeseva One', cursive;
+    font-size:  2vw;
+    font-weight: 400;
+}
+
+.footer > div {
+    margin: 0.6vw 1vw 0 0;
+    float: right;
+}
+
+.footer > p {
+    float: right;
+    margin-right: 2vw;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.25vw;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.footer-sprite-email {
+    background: url('../images/Social\ media\ icons.png') 60.7% 9.75%;
+    background-size: 15vw;
+    width: 3vw; 
+    height: 3vw;
+}
+
+.footer-sprite-email:hover {
+    background: url('../images/Social\ media\ icons.png') 60.7% 33%;
+    background-size: 15vw;
+}
+
+.footer-sprite-fb {
+    background: url('../images/Social\ media\ icons.png') 9.9% 9.9%;
+    background-size: 15vw;
+    width: 3vw; 
+    height: 3vw;
+}
+
+.footer-sprite-fb:hover {
+    background: url('../images/Social\ media\ icons.png') 9.9% 33%;
+    background-size: 15vw;
+}
+
+.footer-sprite-twt {
+    background: url('../images/Social\ media\ icons.png') 35% 9.9%;
+    background-size: 15vw;
+    width: 3vw; 
+    height: 3vw;
+}
+
+.footer-sprite-twt:hover {
+    background: url('../images/Social\ media\ icons.png') 35% 33.15%;
+    background-size: 15vw;
+}
+
+.footer a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
